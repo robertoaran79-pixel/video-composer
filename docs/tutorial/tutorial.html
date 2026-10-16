@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Video Composer · Tutorial de uso (Windows)</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  :root { --tinta: #18203a; --suave: #535d78; --linha: #dde1ec; --acento: #4f6bff; --acento2: #8b5cf6; --fundo: #f4f6fb; --ok: #047857; --aviso: #b45309; }
+  * { box-sizing: border-box; }
+  body { font: 10.5pt/1.5 "Inter", "Segoe UI", system-ui, sans-serif; color: var(--tinta); margin: 0; }
+  h1 { font-size: 26pt; margin: 0 0 6px; letter-spacing: -.01em; }
+  h2 { font-size: 15pt; margin: 0 0 10px; padding-top: 4px; display: flex; align-items: center; gap: 10px; break-after: avoid; }
+  h2 .n { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--acento), var(--acento2)); color: #fff; display: inline-grid; place-items: center; font-size: 12pt; flex: none; }
+  h3 { font-size: 11.5pt; margin: 14px 0 6px; break-after: avoid; }
+  p { margin: 0 0 8px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  section { margin-top: 18px; }
+  section.nova { break-before: page; margin-top: 0; }
+  .capa { height: 255mm; display: flex; flex-direction: column; justify-content: center; }
+  .capa img { width: 88px; margin-bottom: 22px; }
+  .capa .sub { font-size: 14pt; color: var(--suave); margin-bottom: 28px; }
+  .capa .faixa { border-top: 4px solid; border-image: linear-gradient(90deg, var(--acento), var(--acento2)) 1; width: 120px; margin-bottom: 22px; }
+  .capa .meta { color: var(--suave); font-size: 10pt; margin-top: auto; }
+  .indice { columns: 2; column-gap: 24px; padding-left: 18px; }
+  .indice li { break-inside: avoid; }
+  figure { margin: 10px 0 14px; break-inside: avoid; }
+  figure img { width: 100%; max-height: 118mm; object-fit: contain; object-position: left top; border: 1px solid var(--linha); border-radius: 8px; display: block; }
+  figure.meia img { width: 62%; }
+  figcaption { font-size: 9pt; color: var(--suave); margin-top: 4px; }
+  .caixa { border: 1px solid var(--linha); border-left-width: 4px; border-radius: 8px; padding: 9px 12px; margin: 10px 0 12px; background: var(--fundo); break-inside: avoid; }
+  .caixa b.rot { display: inline-block; font-size: 8.5pt; letter-spacing: .06em; text-transform: uppercase; margin-right: 6px; }
+  .dica { border-left-color: var(--acento); } .dica b.rot { color: var(--acento); }
+  .atencao { border-left-color: var(--aviso); } .atencao b.rot { color: var(--aviso); }
+  .ok { border-left-color: var(--ok); } .ok b.rot { color: var(--ok); }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 9.8pt; break-inside: avoid; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+  th { font-size: 8.5pt; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); }
+  code, .mono { font-family: Consolas, "Cascadia Mono", ui-monospace, monospace; font-size: 9.3pt; background: var(--fundo); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--linha); }
+  .passos { counter-reset: p; list-style: none; padding: 0; }
+  .passos > li { counter-increment: p; position: relative; padding-left: 34px; margin-bottom: 9px; break-inside: avoid; }
+  .passos > li::before { content: counter(p); position: absolute; left: 0; top: 0; width: 23px; height: 23px; border-radius: 50%; border: 1.5px solid var(--acento); color: var(--acento); font-weight: 700; font-size: 9.5pt; display: grid; place-items: center; }
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .tecla { font-family: inherit; font-size: 9pt; border: 1px solid #b9c0d4; border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: #fff; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <img src="img/logo.png" alt="Logotipo do Video Composer">
+  <div class="faixa"></div>
+  <h1>Video Composer</h1>
+  <div class="sub">Tutorial de instalação e uso no Windows</div>
+  <p style="max-width:135mm">Transforme a gravação de uma aba do Chrome em um vídeo narrado, com legendas, música, capa, abertura e encerramento. Feito para manuais de produto, onboarding de colaboradores e clientes e capacitação de CS, time comercial e marketing.</p>
+  <h3 style="margin-top:26px">Conteúdo</h3>
+  <ol class="indice">
+    <li>Antes de começar</li>
+    <li>Instalar</li>
+    <li>Abrir e parar</li>
+    <li>Primeira configuração</li>
+    <li>Criar o primeiro vídeo</li>
+    <li>Configurar o vídeo</li>
+    <li>Revisar no editor</li>
+    <li>Exportar</li>
+    <li>Atualizar um vídeo (nova versão)</li>
+    <li>Dicas para boas gravações</li>
+    <li>Atualizar a aplicação</li>
+    <li>Desinstalar</li>
+    <li>Problemas comuns</li>
+  </ol>
+  <div class="meta">Versão 0.4.1 · As telas deste tutorial usam um vídeo de teste.</div>
+</div>
+
+<section class="nova">
+  <h2><span class="n">1</span>Antes de começar</h2>
+  <table>
+    <tr><th style="width:32%">Item</th><th>O que precisa</th></tr>
+    <tr><td><b>Windows</b></td><td>Windows 10 (22H2) ou Windows 11, 64 bits</td></tr>
+    <tr><td><b>Memória e disco</b></td><td>8 GB de RAM (16 GB recomendado) e pelo menos 10 GB livres</td></tr>
+    <tr><td><b>Docker Desktop</b></td><td>Roda a aplicação. O instalador oferece instalar se não tiver. Usa o WSL 2 do Windows e pode pedir para reiniciar o computador uma vez</td></tr>
+    <tr><td><b>Google Chrome</b></td><td>Necessário para gravar abas</td></tr>
+    <tr><td><b>Chave da Anthropic</b></td><td>Obrigatória para gerar vídeos: é a IA que entende a tela e escreve o roteiro. Crie em console.anthropic.com</td></tr>
+    <tr><td><b>Chave da ElevenLabs</b></td><td>Opcional: voz de alta qualidade e música gerada por IA. Sem ela, use a voz offline <b>Kokoro</b> (gratuita, tem voz feminina)</td></tr>
+    <tr><td><b>Internet</b></td><td>Para instalar, para a IA e a voz. A gravação e a montagem do vídeo rodam no seu computador</td></tr>
+  </table>
+  <div class="caixa atencao"><b class="rot">Atenção</b>Se a sua empresa controla o computador, pode ser preciso pedir à TI para instalar o Docker Desktop e liberar a virtualização.</div>
+  <div class="caixa dica"><b class="rot">Privacidade</b>Para escrever o roteiro, quadros da gravação vão para a API da Anthropic. Grave com dados de demonstração sempre que possível. Vídeos e arquivos ficam no seu computador; as chaves ficam num cofre da aplicação, fora da pasta de vídeos.</div>
+
+  <h2 style="margin-top:22px"><span class="n">2</span>Instalar</h2>
+  <ol class="passos">
+    <li><b>Extraia o arquivo.</b> Clique com o botão direito em <span class="mono">VideoComposer-Windows.zip</span> e escolha <b>Extrair tudo</b>. Não rode de dentro do .zip.</li>
+    <li><b>Rode o instalador.</b> Abra a pasta extraída e dê dois cliques em <span class="mono">Instalar.bat</span>. Se aparecer "O Windows protegeu o computador", clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</li>
+    <li><b>Docker Desktop.</b> Se não estiver instalado, responda <b>S</b> para instalar. Ao final, reinicie o computador se o Windows pedir, abra o Docker Desktop uma vez, aceite os termos e rode o instalador de novo pelo Menu Iniciar, em <b>Instalar Video Composer</b>.</li>
+    <li><b>Pasta dos vídeos.</b> Tecle <span class="tecla">1</span> para usar <span class="mono">Vídeos\VideoComposer</span> (recomendado) ou <span class="tecla">2</span> para escolher outra. Evite pastas do OneDrive: vídeos são grandes.</li>
+    <li><b>Aguarde a construção.</b> Na primeira vez leva de 5 a 15 minutos. As próximas aberturas levam segundos.</li>
+    <li><b>Chaves.</b> Cole a chave da Anthropic e, se tiver, a da ElevenLabs. O que você digita não aparece na tela. Pode pular e informar depois em Configurações.</li>
+    <li><b>Atalhos.</b> O instalador cria a pasta <b>Video Composer</b> no Menu Iniciar e, se você quiser, um atalho na Área de Trabalho. A aplicação também aparece em <b>Configurações do Windows &gt; Aplicativos &gt; Aplicativos instalados</b>.</li>
+  </ol>
+  <div class="caixa ok"><b class="rot">Pronto</b>O Chrome abre em <span class="mono">http://localhost:8898</span>. A aplicação fica instalada em <span class="mono">%LOCALAPPDATA%\Programs\VideoComposer</span>. A pasta extraída pode ser apagada.</div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Abrir e parar</h2>
+  <table>
+    <tr><th style="width:24%">Ação</th><th>Como</th></tr>
+    <tr><td><b>Abrir</b></td><td>Menu Iniciar &gt; <b>Video Composer</b> (ou o atalho da Área de Trabalho). Abre o Docker se precisar e depois o Chrome</td></tr>
+    <tr><td><b>Usar</b></td><td>No Chrome, em <span class="mono">http://localhost:8898</span>. Pode salvar nos favoritos</td></tr>
+    <tr><td><b>Parar</b></td><td>Menu Iniciar &gt; Video Composer &gt; <b>Parar Video Composer</b>. Libera memória. Nada é apagado</td></tr>
+  </table>
+  <div class="caixa dica"><b class="rot">Dica</b>Use sempre o endereço <span class="mono">localhost</span>. O Chrome só permite gravar abas a partir dele.</div>
+
+  <h2 style="margin-top:20px"><span class="n">4</span>Primeira configuração</h2>
+  <p>Clique em <b>Configurações</b>, no rodapé do menu à esquerda. Cada seção abre e fecha com um clique e mostra um resumo quando fechada.</p>
+  <figure><img src="img/10b_config_abertas.jpg" alt="Tela de Configurações com seções Aparência, Claude e Voz abertas"><figcaption>Configurações: seções que abrem e fecham.</figcaption></figure>
+  <table>
+    <tr><th style="width:24%">Seção</th><th>O que fazer</th></tr>
+    <tr><td><b>Aparência</b></td><td>Escolha uma das 10 paletas: 5 escuras e 5 claras. Muda na hora</td></tr>
+    <tr><td><b>Claude</b></td><td>Confira se a chave está definida e clique em <b>Testar</b>. Os modelos padrão já são os recomendados</td></tr>
+    <tr><td><b>Voz</b></td><td>Escolha o motor na lista: <b>ElevenLabs</b> (melhor qualidade, carregue a lista e escolha uma voz pt-BR) ou <b>Kokoro</b> (offline e gratuito; Dora é feminina). Clique em <b>Ouvir amostra</b></td></tr>
+    <tr><td><b>Pasta de trabalho</b></td><td>Mostra onde ficam os vídeos. Para mudar, informe o novo caminho, salve e depois pare e abra a aplicação</td></tr>
+    <tr><td><b>Marca</b></td><td>Imagens padrão de abertura e encerramento, logotipo, cores e fonte das legendas</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Criar o primeiro vídeo</h2>
+  <p>A tela inicial é <b>Meus vídeos</b>. Clique em <b>+ Novo vídeo</b>.</p>
+  <figure><img src="img/01_videos.jpg" alt="Tela Meus vídeos com busca, filtros e cartões de vídeo"><figcaption>Meus vídeos: busca, filtros e ações de cada vídeo (Editar, Exportar, Nova versão e Apagar).</figcaption></figure>
+  <figure><img src="img/02_novo.jpg" alt="Tela Novo vídeo com as opções Gravar e Importar"><figcaption>Novo vídeo: gravar uma aba do Chrome ou importar um vídeo pronto.</figcaption></figure>
+  <h3>Gravar uma aba</h3>
+  <ol class="passos">
+    <li>Dê um nome ao vídeo (opcional) e escolha <b>Gravar uma aba do Chrome</b>.</li>
+    <li>Clique em <b>Escolher aba e iniciar</b>. O Chrome pergunta qual aba gravar: escolha a do produto e clique em <b>Compartilhar</b>.</li>
+    <li>Depois de 3 segundos, navegue como faria numa demonstração. Use <b>Pausar</b> se precisar.</li>
+    <li>Volte à aba do Video Composer e clique em <b>Parar e salvar</b>. O assistente de configuração abre na hora.</li>
+  </ol>
+  <h3>Importar um vídeo</h3>
+  <p>Escolha <b>Importar um vídeo</b> e arraste o arquivo (.mp4, .mov, .webm, .mkv). Ele é comprimido em segundo plano enquanto você configura.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Configurar o vídeo</h2>
+  <p>O assistente tem 4 passos. <b>Tudo é opcional</b>: se quiser, vá direto para <b>Revisar e gerar</b>.</p>
+  <h3>Passo 1 · Sobre o vídeo</h3>
+  <figure><img src="img/03_0_sobre.jpg" alt="Passo Sobre o vídeo com finalidades e campos de briefing"></figure>
+  <ul>
+    <li><b>Para quem é este vídeo?</b> Um clique ajusta público, objetivo e tom: Onboarding de colaboradores, Onboarding de clientes, Capacitação de CS, Time comercial, Marketing ou Suporte e tutorial.</li>
+    <li><b>O que mostrar</b>, <b>Precisa falar</b> e <b>Não pode falar</b> (ex.: nomes de clientes, valores reais).</li>
+  </ul>
+</section>
+
+<section>
+  <h3 style="margin-top:0">Passo 2 · Abertura e encerramento</h3>
+  <figure><img src="img/03_1_cartoes.jpg" alt="Editor de abertura com prévia, imagem, título, subtítulo e fala"></figure>
+  <ul>
+    <li>Alterne entre <b>Abertura</b> e <b>Encerramento</b> no topo. Ligue ou desligue cada um.</li>
+    <li><b>Título</b> e <b>subtítulo</b>; <b>Enviar imagem</b> (16:9, de preferência 1920×1080) ou use a imagem padrão da marca.</li>
+    <li><b>Fala:</b> <b>Eu escrevo</b> (lida exatamente como escrita), <b>IA escreve</b> (só na abertura) ou <b>Sem fala</b>. O cartão estica sozinho para caber a fala.</li>
+    <li>A prévia atualiza e tudo salva sozinho.</li>
+  </ul>
+  <h3>Passo 3 · Voz e música</h3>
+  <ul>
+    <li>Escolha o motor e a voz e clique em <b>Ouvir amostra</b>.</li>
+    <li>Música: <b>Gerar com IA</b> (Eleven Music, a mais segura para uso comercial), <b>Minhas faixas</b> ou <b>Sem música</b>.</li>
+  </ul>
+</section>
+
+<section>
+  <h3 style="margin-top:0">Passo 4 · Revisar e gerar</h3>
+  <figure><img src="img/03_3_gerar.jpg" alt="Passo Revisar e gerar com resumo, estimativa de custo e botão Gerar vídeo completo"></figure>
+  <p>Confira o resumo e a estimativa de custo e clique em <b>Gerar vídeo completo</b>. A aplicação faz sozinha:</p>
+  <ol>
+    <li>corta o começo e o fim parados da gravação;</li>
+    <li>entende cada tela e escreve o roteiro no tamanho certo para cada cena;</li>
+    <li>gera a voz e encaixa cada fala no tempo da tela;</li>
+    <li>monta o vídeo com legendas, música, abertura, encerramento e capa, e confere a qualidade.</li>
+  </ol>
+  <div class="caixa dica"><b class="rot">Dica</b>Pode sair da tela durante a geração. O progresso aparece no canto inferior direito e o editor abre sozinho quando terminar.</div>
+</section>
+
+<section>
+  <h2><span class="n">7</span>Revisar no editor</h2>
+  <figure><img src="img/editor_topo.jpg" alt="Editor com player, trilhas de vídeo, narração, legenda e música e barra de ferramentas"><figcaption>Editor: player, trilhas e ferramentas.</figcaption></figure>
+  <ul>
+    <li><b>Trilhas:</b> Vídeo, Narração, Legenda e Música, todas no tempo do vídeo final.</li>
+    <li><b>Ícones das falas:</b> ✓ ritmo natural · ⚡ acelerada · ✂ encurtada pela IA · ⚠ não coube.</li>
+    <li><b>Clique para editar:</b> numa fala para mudar o texto; no bloco da abertura ou do encerramento para mudar texto, imagem e fala; na trilha Música para trocar a faixa.</li>
+    <li>Depois de editar, clique em <b>Aplicar no vídeo</b>. A aplicação refaz só o que mudou.</li>
+    <li><b>Capa:</b> automática, um quadro do vídeo ou uma imagem sua.</li>
+    <li>O botão de <b>três pontos</b>, no canto direito do cabeçalho, abre as telas avançadas: Roteiro completo, Voz e encaixe das falas, Cortes e marcadores.</li>
+  </ul>
+  <p>Quando estiver bom, clique em <b>Aprovar e exportar</b>.</p>
+</section>
+
+<section>
+  <h2><span class="n">8</span>Exportar</h2>
+  <figure><img src="img/06_exportar.jpg" alt="Tela de exportação com formatos e local dos arquivos"></figure>
+  <ul>
+    <li>Formatos: <b>MP4 16:9</b>, <b>MP4 vertical 9:16</b>, versão <b>sem narração</b> e legenda <b>.srt</b> separada.</li>
+    <li>Sempre vão junto a capa em JPG e os créditos e a licença da música.</li>
+    <li>Os arquivos ficam em <span class="mono">Vídeos\VideoComposer\exportados\&lt;nome do vídeo&gt;</span>.</li>
+  </ul>
+
+  <h2 style="margin-top:20px"><span class="n">9</span>Atualizar um vídeo (nova versão)</h2>
+  <p>O produto mudou? Em <b>Meus vídeos</b>, clique no ícone de <b>Nova versão</b> do vídeo e grave de novo. A versão nova herda finalidade, textos, abertura, encerramento, imagens e capa, e recebe o nome "v2", "v3"...</p>
+
+  <h2 style="margin-top:20px"><span class="n">10</span>Dicas para boas gravações</h2>
+  <ul>
+    <li>Deixe a janela do Chrome em 16:9 (de preferência 1920×1080) para não sair com faixas pretas.</li>
+    <li>Esconda a barra de favoritos (<span class="tecla">Ctrl</span> + <span class="tecla">Shift</span> + <span class="tecla">B</span>) e ative o <b>Não incomodar</b> do Windows.</li>
+    <li>Use dados de demonstração. Feche abas com dados sensíveis.</li>
+    <li>Comece e termine parado: a aplicação corta sozinha os trechos sem ação.</li>
+    <li>Navegue sem pressa: pause um instante em cada tela importante para a narração caber.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">11</span>Atualizar a aplicação</h2>
+  <p>Recebeu uma versão nova? Extraia o novo .zip e rode <span class="mono">Instalar.bat</span> de novo. A instalação é atualizada; vídeos, chaves e configurações são mantidos.</p>
+
+  <h2 style="margin-top:20px"><span class="n">12</span>Desinstalar</h2>
+  <p>Use um dos caminhos:</p>
+  <ul>
+    <li><b>Configurações do Windows &gt; Aplicativos &gt; Aplicativos instalados &gt; Video Composer &gt; Desinstalar</b>; ou</li>
+    <li>Menu Iniciar &gt; Video Composer &gt; <b>Desinstalar Video Composer</b>.</li>
+  </ul>
+  <p>O desinstalador:</p>
+  <ol class="passos">
+    <li>Remove o contêiner e a imagem do Docker. Pergunta se apaga também as chaves de API e as vozes offline.</li>
+    <li>Pergunta se apaga a pasta de vídeos. Só apaga se você digitar <b>APAGAR</b>; se não, os vídeos ficam.</li>
+    <li>Remove os atalhos e o registro em Aplicativos instalados.</li>
+    <li>Apaga a pasta da aplicação ao fechar a janela.</li>
+  </ol>
+  <div class="caixa dica"><b class="rot">Docker</b>O Docker Desktop continua instalado, porque outros programas podem usá-lo. Para removê-lo: Configurações do Windows &gt; Aplicativos &gt; Docker Desktop &gt; Desinstalar.</div>
+</section>
+
+<section>
+  <h2><span class="n">13</span>Problemas comuns</h2>
+  <table>
+    <tr><th style="width:38%">Sintoma</th><th>O que fazer</th></tr>
+    <tr><td>"O Windows protegeu o computador"</td><td><b>Mais informações</b> &gt; <b>Executar assim mesmo</b></td></tr>
+    <tr><td>Instalar.bat diz que não encontrou os arquivos</td><td>Você abriu de dentro do .zip. Use <b>Extrair tudo</b> antes</td></tr>
+    <tr><td>Docker pede WSL 2 ou virtualização</td><td>Reinicie o computador. Se continuar, ative a virtualização na BIOS ou peça à TI</td></tr>
+    <tr><td>"O Docker Desktop não respondeu"</td><td>Abra o Docker Desktop pelo Menu Iniciar, espere o status ficar verde (Engine running) e tente de novo</td></tr>
+    <tr><td>"Este navegador não permite capturar abas"</td><td>Use o Chrome em <span class="mono">http://localhost:8898</span></td></tr>
+    <tr><td>Gravação com faixas pretas</td><td>A janela não estava em 16:9. Ajuste o tamanho antes de gravar</td></tr>
+    <tr><td>Parte da tela aparece preta</td><td>A página usa proteção de conteúdo (DRM) e não pode ser gravada</td></tr>
+    <tr><td>Erro de chave (401 ou 403)</td><td>Configurações &gt; Claude ou Voz &gt; cole a chave de novo e clique em <b>Testar</b></td></tr>
+    <tr><td>Erro ao gerar música</td><td>Confira a chave da ElevenLabs e se o plano dá acesso à música</td></tr>
+    <tr><td>Trocou a pasta de trabalho e nada mudou</td><td>Pare e abra a aplicação. Vídeos da pasta antiga não são movidos</td></tr>
+    <tr><td>Erro durante a montagem</td><td>Anote a primeira linha da mensagem de erro e envie para o suporte</td></tr>
+  </table>
+  <h3>Diagnóstico avançado</h3>
+  <p>No Explorador de Arquivos, abra <span class="mono">%LOCALAPPDATA%\Programs\VideoComposer</span>, clique na barra de endereço, digite <span class="mono">powershell</span> e tecle Enter. Depois rode <span class="mono">docker compose logs --tail 200</span> para ver o que aconteceu.</p>
+</section>
+
+</body>
+</html>

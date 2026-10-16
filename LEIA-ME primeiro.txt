@@ -1,0 +1,24 @@
+﻿VIDEO COMPOSER · LEIA-ME PRIMEIRO (Windows)
+
+1. Clique com o botão direito no arquivo .zip e escolha "Extrair tudo".
+   Não rode nada de dentro do .zip.
+
+2. Na pasta extraída, dê dois cliques em "Instalar.bat".
+   Se aparecer "O Windows protegeu o computador":
+   clique em "Mais informações" e depois em "Executar assim mesmo".
+
+3. Siga as perguntas na janela. O instalador:
+   - instala o Docker Desktop, se precisar (pode pedir para reiniciar);
+   - pergunta onde guardar os vídeos (recomendado: Vídeos\VideoComposer);
+   - pede as chaves da Anthropic e da ElevenLabs (pode pular);
+   - cria a pasta "Video Composer" no Menu Iniciar e o atalho na Área de Trabalho.
+
+4. Depois de instalar, esta pasta extraída pode ser apagada.
+   A aplicação fica em %LOCALAPPDATA%\Programs\VideoComposer.
+
+Abrir:       Menu Iniciar > Video Composer
+Parar:       Menu Iniciar > Video Composer > Parar Video Composer
+Desinstalar: Configurações do Windows > Aplicativos > Video Composer,
+             ou Menu Iniciar > Video Composer > Desinstalar Video Composer
+
+O passo a passo completo, com telas, está em "Tutorial de uso.pdf".

@@ -1,0 +1,12 @@
+trabalho
+.env
+**/__pycache__
+*.command
+*.bat
+scripts
+docs
+config
+*.ico
+*.pdf
+LEIA-ME*
+*.zip

@@ -1,0 +1,26 @@
+name: video-composer
+
+services:
+  video-composer:
+    build: .
+    image: video-composer:mvp
+    container_name: video-composer
+    ports:
+      # só acessível deste computador; o Chrome exige localhost para capturar abas
+      - "127.0.0.1:8898:8898"
+    volumes:
+      # pasta de trabalho no computador: biblioteca, marcas, músicas, exportados e configurações
+      - ${PASTA_TRABALHO:-./trabalho}:/trabalho
+      # volume próprio do Docker para chaves de API e vozes offline (fora da pasta de trabalho)
+      - vc-dados:/dados
+      # pasta de configuração local: guarda a pasta de trabalho escolhida pela tela (vale ao reiniciar)
+      - ./config:/config
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      VC_PASTA_HOST: ${PASTA_TRABALHO:-./trabalho}
+    restart: unless-stopped
+
+volumes:
+  vc-dados:

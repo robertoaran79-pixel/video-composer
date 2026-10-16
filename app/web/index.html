@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Composer</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script>
+    /* aplica a paleta salva antes de desenhar, para não piscar */
+    try { var t = localStorage.getItem("vc-tema"); if (t && t !== "marinho") document.documentElement.dataset.tema = t; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="lateral">
+      <div class="marca"><img class="logo" src="logo.png" alt=""><div>Video Composer</div></div>
+      <a class="btn-novo" href="#/novo" id="btn-novo"></a>
+      <nav class="nav" id="nav"></nav>
+      <div class="rodape">
+        <nav class="nav" id="nav-rodape"></nav>
+        <div class="versao" id="rodape"></div>
+      </div>
+    </aside>
+    <main class="principal" id="conteudo"></main>
+  </div>
+  <div id="tarefas"></div>
+  <div id="toast"></div>
+  <script src="js/nucleo.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/assistente.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# segredos e dados locais: nunca vão para o repositório
+.env
+config/*
+!config/.gitkeep
+trabalho/
+
+# gerados
+__pycache__/
+*.pyc
+*.zip
+Windows/
+.DS_Store
+Thumbs.db
