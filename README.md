@@ -11,7 +11,7 @@ Transforma uma navegação gravada numa aba do Chrome em um **vídeo de demonstr
 
 Feito para PMs que mantêm manuais de produtos digitais atualizados: onboarding de colaboradores e clientes, capacitação de CS, time comercial, marketing e suporte.
 
-Roda em **Docker** no Mac ou no Windows, com interface no navegador em **http://localhost:8898**.
+Roda em **Docker** no Mac ou no Windows, com interface no navegador em `http://localhost:8898` (endereço local, disponível só no computador onde a aplicação está rodando).
 
 ---
 
@@ -391,7 +391,7 @@ Video Composer/
 
 **Modo de teste:** para testar o fluxo sem gastar créditos, adicione `VC_MODO_TESTE=1` no `.env` e reinicie. IA, voz e catálogo de músicas são simulados.
 
-**API:** documentação interativa em http://localhost:8898/api/docs
+**API:** com a aplicação rodando no seu computador, a documentação interativa (Swagger) fica em `http://localhost:8898/api/docs` e o esquema OpenAPI em `http://localhost:8898/api/openapi.json`. Esses endereços são locais: não abrem a partir do GitHub.
 
 ---
 
